@@ -1,0 +1,42 @@
+[
+    {
+      "id": 1,
+      "content": "This is a post with an image.",
+      "author": "User A",
+      "likes": 10,
+      "comments": ["Nice!", "Great post!"],
+      "media": [
+        {
+          "type": "image/jpeg",
+          "url": "https://via.placeholder.com/400"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "content": "This is a post with a video.",
+      "author": "User B",
+      "likes": 5,
+      "comments": ["Interesting!", "Cool video!"],
+      "media": [
+        {
+          "type": "video/mp4",
+          "url": "https://www.w3schools.com/html/mov_bbb.mp4"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "content": "This is a post with audio.",
+      "author": "User C",
+      "likes": 8,
+      "comments": ["Nice sound!", "Relaxing."],
+      "media": [
+        {
+          "type": "audio/mp3",
+          "url": "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+        }
+      ]
+    }
+  ]
+  
