@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Box, Tabs, Tab, Typography, Avatar, Grid, Card, CardContent, List, ListItem, ListItemText, CircularProgress } from '@mui/material';
+import { Box, Tabs, Tab, Typography, Avatar, Grid, Card, CardContent, List, ListItem, ListItemText } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProfile } from '../../features/profileSlice';
 import { RootState, AppDispatch } from '../../store/store';
+import Loader from '../../components/loader';
 
 interface TabPanelProps {
     children: React.ReactNode;
@@ -40,7 +41,7 @@ const ProfilePage: React.FC = () => {
     };
 
     if (loading) {
-        return <CircularProgress />;
+        return <Loader message="" />;
     }
 
     return (

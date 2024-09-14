@@ -9,8 +9,8 @@ import ThumbUpAltIcon from '@mui/icons-material/ThumbUpAlt';
 import ThumbUpOffAltIcon from '@mui/icons-material/ThumbUpOffAlt';
 import CommentIcon from '@mui/icons-material/Comment';
 import { Card, CommentInput, FeedContainer } from './feed-page.style';
-import CircularProgress from '@mui/material/CircularProgress';
 import CreatePostPage from '../create-post-page';
+import Loader from '../../components/loader';
 
 const FeedPage: React.FC = () => {
     const dispatch = useDispatch<AppDispatch>();
@@ -25,18 +25,28 @@ const FeedPage: React.FC = () => {
     }, [status, dispatch]);
 
     if (status === 'loading') {
-        return <CircularProgress />;
+        return <Loader message="" />;
     }
 
     if (status === 'failed') {
         return <Typography variant="h6" color="error">{error}</Typography>;
     }
 
+    // const handleLike = (postId: number) => {
+    //     console.log(postId, "postIdpostId", user)
+    //     if (user && user.id) {
+    //         dispatch(toggleLike({ postId, userId: user.id }));
+    //     }
+    // };
     const handleLike = (postId: number) => {
+        console.log(postId, "postIdpostId", user)
         if (user && user.id) {
             dispatch(toggleLike({ postId, userId: user.id }));
+        } else {
+            console.error('User not authenticated');
         }
     };
+
 
     const handleComment = (postId: number, comment: string) => {
         if (comment.trim()) {
@@ -90,7 +100,7 @@ const FeedPage: React.FC = () => {
 
                     <Box sx={{ display: 'flex', alignItems: 'center', mt: 2 }}>
                         <IconButton onClick={() => handleLike(post.id)}>
-                            {post.likedBy && user && post.likedBy.includes(String(user.id)) ? (
+                        {post.likedBy && user && post.likedBy.includes(String(user.id)) ? (
                                 <ThumbUpAltIcon color="primary" />
                             ) : (
                                 <ThumbUpOffAltIcon />

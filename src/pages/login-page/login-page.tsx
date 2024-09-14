@@ -73,6 +73,7 @@ export default function SignIn() {
                 login({
                     name: email.split('@')[0],
                     phone: password,
+                    id: 1234567890
                 })
             )
             navigate('/feed')

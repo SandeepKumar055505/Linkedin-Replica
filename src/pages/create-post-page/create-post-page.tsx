@@ -11,8 +11,8 @@ import FormLabel from '@mui/material/FormLabel';
 import Alert from '@mui/material/Alert';
 import { Card, CreatePostContainer, FileDropArea } from './create-post-page.style';
 import DOMPurify from 'dompurify';
-import CircularProgress from '@mui/material/CircularProgress';
 import UploadFileIcon from '@mui/icons-material/UploadFile';
+import Loader from '../../components/loader';
 
 const CreatePostPage: React.FC = () => {
     const [content, setContent] = useState('');
@@ -229,7 +229,7 @@ const CreatePostPage: React.FC = () => {
                         variant="contained"
                         color="primary"
                         disabled={loading || (!content && files.length === 0)}
-                        startIcon={loading && <CircularProgress size={20} />}
+                        startIcon={loading && <Loader message="" />}
                     >
                         {loading ? 'Posting...' : 'Post'}
                     </Button>
