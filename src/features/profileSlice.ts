@@ -27,8 +27,8 @@ export const fetchProfile = createAsyncThunk('profile/fetchProfile', async () =>
                 "Lazy loading", "Agile Methodologies"
             ],
             suggestedForYou: [
-                { name: "John Doe", title: "Full-Stack Developer", location: "Delhi, India" },
-                { name: "Jane Smith", title: "UI/UX Designer", location: "Mumbai, India" }
+                { name: "Sumit", title: "Full-Stack Developer", location: "Delhi, India" },
+                { name: "Jatin", title: "Team Lead", location: "Mumbai, India" }
             ],
             analytics: {
                 profileViews: 45,
